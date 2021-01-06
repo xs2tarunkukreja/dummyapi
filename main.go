@@ -1,9 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/xs2tarunkukreja/dummyapi/handlers"
 )
 
 func main() {
-	fmt.Println("Hello World")
+	handlers.RegisterRoutes()
+	log.Println("Going to start server")
+	log.Fatal(http.ListenAndServe(":3010", nil))
 }
